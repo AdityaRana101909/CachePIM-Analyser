@@ -1,0 +1,68 @@
+cache:
+  capacity_bytes: 32768
+  line_size_bytes: 64
+  replacement: LRU
+
+cpu:
+  frequency_hz: 2500000000.0
+  hit_service_ns: 2.0
+  miss_service_ns: 80.0
+  compute_ns_per_op: 0.4
+
+pim:
+  bank_count: 16
+  effective_bandwidth_bytes_per_ns: 128.0
+  compute_ops_per_ns_per_bank: 1.0
+  launch_overhead_ns: 50.0
+  sync_overhead_ns: 20.0
+  bank_imbalance_model: max_over_mean
+
+transfer:
+  host_to_pim_bandwidth_bytes_per_ns: 16.0
+  pim_to_host_bandwidth_bytes_per_ns: 16.0
+  host_to_pim_fixed_ns: 100.0
+  pim_to_host_fixed_ns: 100.0
+
+policy:
+  reuse_threshold: 0.5
+  reuse_penalty_weight: 1.0
+
+experiment:
+  master_seeds:
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+  dev_seeds:
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+  held_out_seeds:
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+  traces_per_seed: 5
+  default_workload_patterns:
+    - STREAM
+    - REUSE
+    - RANDOM
+    - MIXED_PHASE
+
+version: "1.0.0"
+
+sweeps:
+  cache_capacities_kb: [16, 32, 64, 128, 256, 512]
+  working_set_sizes_kb: [8, 16, 32, 64, 128, 256]
+  transfer_bandwidths_gb_s: [4.0, 8.0, 16.0, 32.0, 64.0]
+  pim_bank_counts: [4, 8, 16, 32, 64]
+  reuse_penalty_weights: [0.0, 0.25, 0.5, 1.0, 2.0, 4.0]

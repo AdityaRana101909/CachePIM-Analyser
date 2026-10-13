@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-13T21:03:08.510028",
+  "config_hash": "50bdd95a216297c7",
+  "model_version": "1.0.0",
+  "master_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "dev_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "held_out_seeds": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "raw_dir": "results\\raw",
+  "summary_dir": "results\\summary"
+}

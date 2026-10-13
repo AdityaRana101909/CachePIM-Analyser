@@ -1,0 +1,34 @@
+{
+  "dev_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "held_out_seeds": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "dev_comparison": {
+    "test_policy": "Reuse-aware",
+    "baseline_policy": "Cost-based",
+    "metric": "selected_model_ns",
+    "num_pairs": 60,
+    "mean_difference": -12404.933333333332,
+    "sample_std_difference": 19142.279352320085,
+    "p_value": 5.071586947184427e-06
+  },
+  "test_comparison": {
+    "test_policy": "Reuse-aware",
+    "baseline_policy": "Cost-based",
+    "metric": "selected_model_ns",
+    "num_pairs": 60,
+    "mean_difference": -12402.333333333334,
+    "sample_std_difference": 19136.69176930658,
+    "p_value": 5.063955160743464e-06
+  }
+}
